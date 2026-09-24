@@ -1,1 +1,302 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>よくある質問 | RxConfirm</title>
+<style>
+  :root {
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+    --accent: #0a7ea4;
+    --bg: #ffffff;
+    --card-bg: #f5f7f8;
+    --border: #e3e6e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  header .app-name {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 8px 0 4px;
+  }
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  nav.toc {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 22px;
+    margin: 28px 0 40px;
+  }
+  nav.toc div.toc-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  nav.toc ul {
+    margin: 0;
+    padding-left: 1.2em;
+    font-size: 14px;
+  }
+  nav.toc a {
+    color: var(--text);
+    text-decoration: none;
+  }
+  nav.toc a:hover { color: var(--accent); }
+  h2 {
+    font-size: 19px;
+    margin-top: 44px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    scroll-margin-top: 20px;
+  }
+  .qa {
+    margin: 20px 0;
+  }
+  .q {
+    font-size: 15.5px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+  }
+  .q .badge {
+    flex-shrink: 0;
+    color: var(--accent);
+  }
+  .a {
+    margin: 8px 0 0 26px;
+    font-size: 14.5px;
+    color: #333;
+  }
+  .a p { margin: 0 0 10px; }
+  .a p:last-child { margin-bottom: 0; }
+  ul, ol {
+    padding-left: 1.3em;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 16px 0 16px 26px;
+    font-size: 14px;
+  }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
 
+  <header>
+    <div class="app-name">RxConfirm</div>
+    <h1>よくある質問</h1>
+    <div class="updated">最終更新日: 2026年9月24日</div>
+  </header>
+
+  <nav class="toc">
+    <div class="toc-title">目次</div>
+    <ul>
+      <li><a href="#about">1. アプリについて</a></li>
+      <li><a href="#account">2. 登録・アカウント</a></li>
+      <li><a href="#connect">3. 施設連携</a></li>
+      <li><a href="#query">4. 疑義照会</a></li>
+      <li><a href="#qr">5. 処方箋QRコード</a></li>
+      <li><a href="#notification">6. 通知</a></li>
+      <li><a href="#plan">7. 料金</a></li>
+      <li><a href="#privacy">8. プライバシー・セキュリティ</a></li>
+      <li><a href="#contact">9. お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="about">1. アプリについて</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>RxConfirmはどんなアプリですか。</div>
+    <div class="a">
+      <p>
+        保険薬局と医療機関(病院・診療所)の間で行われる「疑義照会」(処方内容について、薬剤師が医師に確認を行うこと。薬剤師法第24条に基づく義務)を、電話の代わりに電子的に行うための業務用アプリです。
+      </p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>誰が使うことを想定していますか。</div>
+    <div class="a">
+      <p>保険薬局の薬剤師、および医療機関(病院・診療所)の職員を対象としています。一般の患者様がご自身で使うアプリではありません。</p>
+    </div>
+  </div>
+
+  <h2 id="account">2. 登録・アカウント</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>アカウントはどうやって作りますか。</div>
+    <div class="a">
+      <p>初回起動時に、メールアドレスとパスワードでの新規登録、および自施設の情報(施設名・区分・住所・電話番号)の入力を行います。登録後、6桁の確認コードがメールに届き、それを入力して本登録が完了します。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>1つのアカウントで複数の施設を管理できますか。</div>
+    <div class="a">
+      <p>はい。同じメールアドレスで、複数の施設(例: グループ内の複数店舗)を登録・切り替えて利用できます。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>同じ施設を誤って二重登録してしまうことはありませんか。</div>
+    <div class="a">
+      <p>同一アカウント内であれば、電話番号(ハイフン等の表記ゆれは吸収します)をもとに重複登録を検知し、警告を表示します。</p>
+    </div>
+  </div>
+
+  <h2 id="connect">3. 施設連携</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>他の施設と繋がるにはどうすればいいですか。</div>
+    <div class="a">
+      <p>「設定」タブに表示される自施設の招待コード(6桁)を、電話等で直接相手施設に伝えます。相手側は「登録施設」タブの＋ボタンからそのコードを入力して登録申請し、コード発行側が承認すると連携が成立します。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>招待コードの有効期限はどれくらいですか。</div>
+    <div class="a">
+      <p>発行から10分間です。期限が切れた場合は、「設定」タブから再発行できます。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>施設との登録を解除するとどうなりますか。</div>
+    <div class="a">
+      <p>解除はどちらの施設からでも行えます。解除後、新規の疑義照会はできなくなりますが、それまでのやり取りの履歴は残ります。</p>
+    </div>
+  </div>
+
+  <h2 id="query">4. 疑義照会</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>「送信」と「回答として確定」の違いは何ですか。</div>
+    <div class="a">
+      <p>「送信」は通常のメッセージのやり取りです。「回答として確定」は、疑義照会に対する正式な回答であることを明示し、そのスレッドを「確認済み」の状態にする特別な操作です。既読になっただけでは確認したことにはならず、この操作を押すことで初めて確認の記録として残ります。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>疑義照会の内容は誰が見られますか。</div>
+    <div class="a">
+      <p>やり取りに参加している2つの施設のアカウントのみが閲覧できます。開発者を含む第三者が内容を閲覧することはありません。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>よく使う文言をテンプレートとして使えますか。</div>
+    <div class="a">
+      <p>新規疑義照会の作成画面から「テンプレートから選ぶ」で、用法用量の確認・相互作用の確認・重複投薬の確認など、よくある照会パターンの定型文を差し込めます。差し込んだ後は自由に編集できます。</p>
+    </div>
+  </div>
+
+  <h2 id="qr">5. 処方箋QRコード</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>処方箋のQRコードを読み取って入力を省略できますか。</div>
+    <div class="a">
+      <p>はい。新規疑義照会の作成画面から、処方箋に印字されたJAHIS形式の二次元シンボルを読み取り、Rp(処方単位)ごとの薬剤名・用量・用法・日数を自動的に整形して表示します。必要な項目だけを選んで本文に追記できます。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>患者様の氏名や生年月日はどう扱われますか。</div>
+    <div class="a">
+      <p>読み取ったデータのうち、患者氏名・生年月日は自動的に判別され、初期状態では疑義照会の本文に含まれません。詳しくは<a href="index.html">プライバシーポリシー</a>をご確認ください。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>QRコードがうまく読み取れません。</div>
+    <div class="a">
+      <p>処方箋によっては、QRコードが複数枚に分かれて印字されている場合があります。その場合はすべてのQRコードを順に画面の枠内に収めてください。「検出済み」の件数が処方箋に印字されている枚数と一致していることを確認してから「読み取りを完了」を押してください。</p>
+      <p>読み取りにくい場合は、右下のライトのアイコンで照明を点灯し、QRコードにできるだけ近づけて、正面からゆっくりかざしてみてください。</p>
+    </div>
+  </div>
+
+  <h2 id="notification">6. 通知</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>相手施設からの登録申請や新着メッセージに気づけますか。</div>
+    <div class="a">
+      <p>プッシュ通知に対応しています。登録申請・承認・疑義照会への新着メッセージがあった際に通知が届き、タップすると該当する画面が開きます。</p>
+    </div>
+  </div>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>通知が届きません。</div>
+    <div class="a">
+      <p>端末の「設定」アプリ内で、本アプリの通知が許可されているかご確認ください。許可されていても届かない場合は、一度サインアウトして再度サインインしてみてください。</p>
+    </div>
+  </div>
+
+  <h2 id="plan">7. 料金</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>無料で使えますか。</div>
+    <div class="a">
+      <p>登録できる連携施設は2件まで無料でご利用いただけます。3件目以降の連携には、今後提供予定の有料プランへのご加入が必要になる予定です(現時点では課金の受付自体は行っておりません)。</p>
+    </div>
+  </div>
+
+  <h2 id="privacy">8. プライバシー・セキュリティ</h2>
+
+  <div class="qa">
+    <div class="q"><span class="badge">Q.</span>データはどこに保管されますか。</div>
+    <div class="a">
+      <p>Google Firebaseのサーバーに保管されます。各施設のデータへのアクセスは、関係する施設のアカウントのみに制限されています。詳しくは<a href="index.html">プライバシーポリシー</a>をご覧ください。</p>
+    </div>
+  </div>
+
+  <h2 id="contact">9. お問い合わせ</h2>
+  <p>
+    ここに記載の無いご質問や不具合のご報告は、以下までご連絡ください。
+  </p>
+  <div class="card" style="margin-left:0;">
+    <p style="margin:0"><strong>開発者:</strong> SUZUNOYA</p>
+    <p style="margin:0"><strong>メール:</strong> <a href="mailto:ws.suzunoya@gmail.com">ws.suzunoya@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 SUZUNOYA. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>
