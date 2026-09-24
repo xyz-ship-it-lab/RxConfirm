@@ -1,1 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プライバシーポリシー | RxConfirm</title>
+<style>
+  :root {
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+    --accent: #0a7ea4;
+    --bg: #ffffff;
+    --card-bg: #f5f7f8;
+    --border: #e3e6e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  header {
+    margin-bottom: 40px;
+  }
+  header .app-name {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 28px;
+    margin: 8px 0 4px;
+  }
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  h2 {
+    font-size: 19px;
+    margin-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  h3 {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+  p, li {
+    font-size: 15px;
+    color: #333;
+  }
+  ul, ol {
+    padding-left: 1.3em;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .highlight {
+    background: #eef8ee;
+    border: 1px solid #bfe3bf;
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 16px 0;
+  }
+  .highlight strong { color: #1c6b1c; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin: 16px 0;
+  }
+  th, td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  th {
+    color: var(--muted);
+    font-weight: 600;
+    width: 34%;
+  }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
 
+  <header>
+    <div class="app-name">RxConfirm</div>
+    <h1>プライバシーポリシー</h1>
+    <div class="updated">最終更新日: 2026年9月24日</div>
+  </header>
+
+  <p>
+    本ポリシーは、SUZUNOYA(xyz-ship-it-lab、以下「開発者」)が提供するiOSアプリケーション
+    「RxConfirm」(以下「本アプリ」)における、利用者情報の取り扱いについて説明するものです。
+    本アプリは、保険薬局と医療機関(病院・診療所)の間で行われる疑義照会(薬剤師法第24条に基づく、
+    処方内容に関する薬局から医療機関への確認)を、電話に代わる手段として電子的に行うための
+    業務用ツールです。
+  </p>
+
+  <div class="highlight">
+    <strong>設計上の基本方針</strong>
+    <p style="margin-bottom:0">
+      本アプリは、処方箋に印字された二次元シンボル(QRコード)を読み取る機能を持ちますが、
+      読み取ったデータのうち<strong>患者の氏名・生年月日は、アプリ内で自動的に判別し、
+      サーバーへは送信しない設計</strong>としています。疑義照会に必要な薬剤名・用法・用量等の
+      情報のみを扱うことを基本方針としています。ただし、利用者がメッセージ本文に手動で
+      患者情報を入力した場合は、その内容が送信される可能性があります(詳細は本文をご参照ください)。
+    </p>
+  </div>
+
+  <h2>1. 取得する情報</h2>
+
+  <h3>1.1 アカウント情報</h3>
+  <table>
+    <tr><th>メールアドレス・パスワード</th><td>サインイン(認証)のために取得します。認証基盤にはGoogle Firebase Authenticationを使用しています。</td></tr>
+  </table>
+
+  <h3>1.2 施設情報(利用者が入力)</h3>
+  <table>
+    <tr><th>施設名・区分</th><td>薬局または医療機関の別、施設名</td></tr>
+    <tr><th>所在地</th><td>都道府県、市区町村以降の住所</td></tr>
+    <tr><th>電話番号</th><td>連絡先、および同一アカウント内での重複登録防止の判定に使用</td></tr>
+    <tr><th>医療機関番号/保険薬局コード</th><td>任意入力</td></tr>
+  </table>
+
+  <h3>1.3 施設間の登録・連携情報</h3>
+  <p>
+    施設同士を連携させるための招待コード、連携申請・承認の状態を記録します。
+  </p>
+
+  <h3>1.4 疑義照会の内容</h3>
+  <table>
+    <tr><th>件名・本文</th><td>疑義照会のやり取りとして入力・送信された文章</td></tr>
+    <tr><th>処方情報</th><td>QRコードから読み取った薬剤名・用量・用法・日数等(下記1.5参照)</td></tr>
+    <tr><th>患者ID・処方医名</th><td>疑義照会の対象を特定するための、処方箋に記載された識別番号・医師名(患者氏名そのものではありません)</td></tr>
+  </table>
+
+  <h3>1.5 処方箋QRコードの読み取りについて</h3>
+  <p>
+    処方箋の二次元シンボルは、JAHIS(一般社団法人保健医療福祉情報システム工業会)が定める
+    「院外処方箋2次元シンボル記録条件規約」に基づき、医療機関名・処方医名・患者氏名・生年月日・
+    保険情報・薬剤情報等を含む場合があります。本アプリは、これを端末内でカメラ読み取り後に
+    その場で解析し、
+  </p>
+  <ul>
+    <li>薬剤名・用量・用法・日数等の処方情報は、確認のうえ疑義照会の本文に含めることができます</li>
+    <li>患者氏名・生年月日は、専用の確認画面に個別表示され、初期状態では本文に含まれません(利用者が明示的に操作した場合を除く)</li>
+  </ul>
+  <p>
+    なお、疑義照会の本文はテキスト入力欄であるため、利用者が任意の文言を手動で入力・編集することが
+    技術的には可能です。患者を特定しうる情報を本文に含めないよう、アプリ内に注意喚起を表示していますが、
+    最終的な入力内容の管理は利用者の責任に委ねられます。
+  </p>
+
+  <h3>1.6 プッシュ通知のための情報</h3>
+  <p>
+    施設間の登録申請・承認、疑義照会の新着メッセージを通知するため、Firebase Cloud Messagingの
+    デバイストークンを取得・保管します。
+  </p>
+
+  <h3>1.7 自動的に取得される情報</h3>
+  <p>
+    Firebase各サービスの利用に伴い、稼働状況の把握等を目的とした技術的なログ(エラー情報等)が
+    Google Firebase側で記録される場合があります。
+  </p>
+
+  <h2>2. 情報の利用目的</h2>
+  <ul>
+    <li>本アプリの認証・施設登録・施設間連携の提供</li>
+    <li>疑義照会のやり取り(作成・送受信・履歴保存)の提供</li>
+    <li>登録申請・新着メッセージのプッシュ通知</li>
+    <li>不具合の調査・品質改善</li>
+  </ul>
+  <p>広告表示や、本アプリの外部でのマーケティング目的に利用者情報を利用することはありません。</p>
+
+  <h2>3. 第三者への提供・委託</h2>
+  <div class="card">
+    <p style="margin-top:0">
+      本アプリのデータ保管・認証・通知配信基盤として、<strong>Google Firebase</strong>
+      (Google LLC)を利用しています。これに伴い、取得した情報はFirebaseのサーバーに保管されます。
+      Firebaseの個人情報の取り扱いについては、Googleのプライバシーポリシーをご参照ください。
+    </p>
+    <p style="margin-bottom:0">
+      <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+        Google プライバシーポリシー
+      </a>
+    </p>
+  </div>
+  <p>
+    疑義照会の内容は、その性質上、送信先として指定した連携済みの相手施設のみが閲覧できます。
+    開発者が意図的に内容を閲覧することはありません。
+  </p>
+  <p>
+    法令に基づく場合を除き、取得した情報を上記以外の第三者に提供することはありません。
+  </p>
+
+  <h2>4. データの保管期間</h2>
+  <p>
+    アカウントおよび疑義照会の記録は、利用者がアカウントを削除するまで、または法令上必要な期間、
+    保管されます。削除をご希望の場合は、下記お問い合わせ先までご連絡ください。
+  </p>
+
+  <h2>5. 情報の開示・訂正・削除</h2>
+  <p>
+    利用者は、アプリ内の設定画面から自施設の登録情報を確認・修正できます。
+    アカウントおよび関連データの削除をご希望の場合は、下記お問い合わせ先までご連絡ください。
+    本人確認のうえ、法令に従い対応いたします。
+  </p>
+
+  <h2>6. 未成年者の利用について</h2>
+  <p>
+    本アプリは薬局・医療機関の業務従事者を対象とした業務用ツールであり、未成年者の利用を
+    想定していません。
+  </p>
+
+  <h2>7. セキュリティ</h2>
+  <p>
+    Firestoreセキュリティルールにより、各データは関係する施設のアカウントのみがアクセスできるよう
+    制限しています。通信は暗号化(TLS)された経路で行われます。
+  </p>
+
+  <h2>8. 本ポリシーの変更</h2>
+  <p>
+    本ポリシーの内容は、法令改正やアプリの機能追加等に応じて変更されることがあります。
+    重要な変更がある場合は、本ページ上でお知らせします。
+  </p>
+
+  <h2>9. お問い合わせ</h2>
+  <p>
+    本ポリシーおよび本アプリにおける情報の取り扱いに関するお問い合わせは、以下までご連絡ください。
+  </p>
+  <div class="card">
+    <p style="margin:0"><strong>開発者:</strong> SUZUNOYA</p>
+    <p style="margin:0"><strong>メール:</strong> <a href="mailto:ws.suzunoya@gmail.com">ws.suzunoya@gmail.com</a></p>
+  </div>
+
+  <footer>
+    &copy; 2026 SUZUNOYA. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>
