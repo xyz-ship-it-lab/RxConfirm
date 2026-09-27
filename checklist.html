@@ -1,1 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>運用チェックリスト | RxConfirm</title>
+<style>
+  :root {
+    --text: #1c1c1e;
+    --muted: #6e6e73;
+    --accent: #0a7ea4;
+    --bg: #ffffff;
+    --card-bg: #f5f7f8;
+    --border: #e3e6e8;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+      "Hiragino Sans", Meiryo, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.8;
+  }
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 20px 80px;
+  }
+  header {
+    margin-bottom: 32px;
+  }
+  header .app-name {
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  h1 {
+    font-size: 26px;
+    margin: 8px 0 4px;
+  }
+  .updated {
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .lead {
+    font-size: 15px;
+    color: #333;
+    margin: 20px 0 32px;
+  }
+  h2 {
+    font-size: 18px;
+    margin-top: 40px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .item {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 14px 0;
+  }
+  .item .t {
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    gap: 8px;
+    align-items: flex-start;
+  }
+  .item .t::before {
+    content: "☐";
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .item p {
+    margin: 8px 0 0 24px;
+    font-size: 13.5px;
+    color: #444;
+  }
+  footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
 
+  <header>
+    <div class="app-name">RxConfirm</div>
+    <h1>運用チェックリスト</h1>
+    <div class="updated">最終更新日: 2026年9月27日</div>
+  </header>
+
+  <p class="lead">
+    疑義照会アプリ「RxConfirm」を薬局・医療機関間で運用するにあたって、両施設で
+    確認・共有しておくべき事項をまとめたものです。導入時だけでなく、運用中も
+    定期的に見返すことをお勧めします。
+  </p>
+
+  <h2>1. 共通で決めておくこと(両施設とも)</h2>
+
+  <div class="item">
+    <div class="t">アカウントの管理者を決める</div>
+    <p>今の設計は「1施設 = 1アカウント」です。複数の薬剤師・職員が同じ施設として使う場合も、個人ごとのアカウントではなく、施設としてログイン情報を共有する運用になります。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">招待コードの受け渡し方法を決める</div>
+    <p>招待コードは発行から10分で失効します。「電話しながらその場でコードを伝え、すぐに入力してもらう」運用を徹底してください。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">「送信」と「回答として確定」の違いを周知する</div>
+    <p>普通にメッセージを送っただけでは、記録上「未確認」のままです。正式な確認として記録されるのは「回答として確定」を押した時だけです。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">未回答時のエスカレーション基準を決める</div>
+    <p>例:「15分経っても未回答なら、アプリではなく電話で確認する」等、両施設で共通の運用ルールにしておく。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">患者氏名等を本文に書き込まない、という運用ルールを徹底する</div>
+    <p>処方箋QRから読み取った際は氏名・生年月日は自動的に本文から除外されますが、手入力では技術的に書き込めてしまうため、運用ルールでの徹底が必要です。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">患者IDの取り扱いについて、自施設の個人情報保護方針との整合を確認する</div>
+    <p>RxConfirmは患者と直接の関係を持たず、施設からの委託先として機能する設計です。患者への利用目的の公表・説明(外部システム・委託先の利用を含む)は、各施設自身の個人情報保護方針の範囲で既に対応済みか、施設側で確認してください。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">プッシュ通知を許可しておく</div>
+    <p>端末の通知設定、および集中モード(おやすみモード等)使用時の許可設定を確認してください。</p>
+  </div>
+
+  <h2>2. 薬局側で決めておくこと</h2>
+
+  <div class="item">
+    <div class="t">連携する医療機関の処方箋に、QRコードが実際に印字されているか確認する</div>
+    <p>病院・診療所のレセコン/電子カルテの設定によっては、QRコード自体を出力していない場合があります。事前に確認してください。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">無料お試し期間・サブスクリプションについて確認する</div>
+    <p>登録から1ヶ月間は無料でお試しいただけます。期間終了後、施設との新規連携・疑義照会の新規作成には、月額390円または年額4,290円のサブスクリプション(端末ごとの加入)が必要です。既存のやり取りの閲覧・返信は継続して行えます。</p>
+  </div>
+
+  <h2>3. 医療機関側で決めておくこと</h2>
+
+  <div class="item">
+    <div class="t">疑義照会への対応者(院内の担当医師・部署)を決めておく</div>
+    <p>即応性が求められるため、「誰が見て、誰が答えるか」が曖昧だと機能しません。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">「回答として確定」を押す権限・運用を周知する</div>
+    <p>正式な回答の記録として扱われる操作のため、対応する担当者に周知してください。</p>
+  </div>
+
+  <h2>4. 備えておくと良いもの</h2>
+
+  <div class="item">
+    <div class="t">端末(iPhone)がWi-Fiに常時接続できる環境</div>
+    <p>通知の即時性、QRコード読み取りの安定性のために推奨します。</p>
+  </div>
+
+  <div class="item">
+    <div class="t">月次記録(PDF出力)の保管・提出ルールとの整合</div>
+    <p>「記録」タブからPDF出力した月次記録を、院内・薬局内の既存の記録管理ルールとどう整合させるか、あらかじめ決めておくとスムーズです。</p>
+  </div>
+
+  <footer>
+    &copy; 2026 SUZUNOYA. All rights reserved.
+  </footer>
+
+</div>
+</body>
+</html>
